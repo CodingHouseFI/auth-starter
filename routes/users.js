@@ -26,12 +26,8 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/profile', User.isLoggedIn, function(req, res) {
-  // get data for logged in user
-
   User.findById(req.token._id, function(err, user) {
-
     res.send(user);
-
   });
 });
 
